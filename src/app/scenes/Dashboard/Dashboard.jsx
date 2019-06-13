@@ -195,7 +195,7 @@ class Dashboard extends React.Component {
 										// secondary={'Secondary text'}
 										/>
 										<ListItemSecondaryAction>
-											<IconButton edge="end" aria-label="Edit" id={element._id} onClick={() => this.setState({ dialogMode: 'update', dialogOpen: true, editButtonId: element._id })}>
+											<IconButton edge="end" aria-label="Edit" id={element._id} onClick={() => this.setState({ dialogMode: 'update', dialogOpen: true, editButtonId: element._id, textChange: element.text })}>
 												<Edit />
 											</IconButton>
 											<IconButton edge="end" aria-label="Delete" id={element._id} onClick={() => this.deleteListItem(element._id)}>
@@ -221,6 +221,7 @@ class Dashboard extends React.Component {
 								label="Text"
 								type="email"
 								fullWidth
+								value={this.state.textChange}
 								onChange={this.handleTextChange}
 							/>
 						</DialogContent>
